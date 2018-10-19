@@ -22,7 +22,7 @@ public class Reader {
         int symbolsWithOutSpase = countSymbolsWithOutSpase(myText);
         int symbolsWithSpase = countSymbolsWithSpase(myText);
         int word = counterWords(myText);
-        System.out.printf("Количество символов пробелами %d , количество символов без пробов %d , количество слов %d   ",symbolsWithSpase, symbolsWithOutSpase,  word);
+        System.out.printf("Количество символов c пробелами %d , количество символов без пробов %d , количество слов %d   ",symbolsWithSpase, symbolsWithOutSpase,  word);
     }
 
     private static int countSymbolsWithOutSpase(String[] myText) {
