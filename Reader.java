@@ -21,7 +21,7 @@ public class Reader {
 
             }
         } catch (IOException e) {
-            System.out.println("Ошибка");
+            System.out.println("Ошибка ");
         }
         String[] myText = transfer(text);
         symbolsWithOutSpase = countSymbolsWithOutSpase(myText);
