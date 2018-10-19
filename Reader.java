@@ -5,12 +5,7 @@ import java.util.ArrayList;
 public class Reader {
 
     public static void main(String[] args) {
-        int counter = 0;
         ArrayList text = new ArrayList();
-        int symbolsWithOutSpase = 0;
-        int symbolsWithSpase = 0;
-        int word = 0;
-        String[] array = new String[10];
         try {
             FileInputStream fstream = new FileInputStream("E:\\_CommonRedist\\12.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
@@ -24,17 +19,17 @@ public class Reader {
             System.out.println("Ошибка ");
         }
         String[] myText = transfer(text);
-        symbolsWithOutSpase = countSymbolsWithOutSpase(myText);
-        symbolsWithSpase = countSymbolsWithSpase(myText);
-        word = counterWords(myText);
-        System.out.printf(" %d , %d , %d   ",symbolsWithSpase, symbolsWithOutSpase,  word);
+        int symbolsWithOutSpase = countSymbolsWithOutSpase(myText);
+        int symbolsWithSpase = countSymbolsWithSpase(myText);
+        int word = counterWords(myText);
+        System.out.printf("Количество символов пробелами %d , количество символов без пробов %d , количество слов %d   ",symbolsWithSpase, symbolsWithOutSpase,  word);
     }
 
     private static int countSymbolsWithOutSpase(String[] myText) {
         int counter = 0;
-        for (String f : myText) {
-            for (int i = 0; i < f.length(); i++) {
-                if (f.charAt(i) != ' ') {
+        for (String string : myText) {
+            for (int i = 0; i < string.length(); i++) {
+                if (string.charAt(i) != ' ') {
                     counter++;
                 }
             }
@@ -44,9 +39,9 @@ public class Reader {
 
     private static int countSymbolsWithSpase(String[] myText) {
         int counter = 0;
-        for (String f : myText) {
-            for (int i = 0; i < f.length(); i++) {
-                if (f.charAt(i) != '|') {
+        for (String string : myText) {
+            for (int i = 0; i < string.length(); i++) {
+                if (string.charAt(i) != '|') {
                     counter++;
                 }
             }
@@ -56,8 +51,8 @@ public class Reader {
 
     private static int counterWords(String[] myText) {
         int count = 0;
-        for (String f : myText) {
-            for (String retval : f.split(" ")) {
+        for (String string : myText) {
+            for (String retval : string.split(" ")) {
                 count++;
             }
         }
